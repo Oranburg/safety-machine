@@ -1,0 +1,194 @@
+/* ==========================================================================
+   The Safety Machine — Site-Specific Styles
+   Built on top of oranburg-style.css (shared design tokens)
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+
+.hero {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-xl);
+  background: radial-gradient(ellipse at center, var(--bg-soft) 0%, var(--bg) 70%);
+}
+
+.hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero-epigraph {
+  font-size: 1.3rem;
+  border-left: none;
+  background: none;
+  padding: 0;
+  margin: 0 0 var(--space-2xl);
+  color: var(--accent-2);
+  text-align: center;
+}
+
+.hero-epigraph cite {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: var(--space-sm);
+  font-style: normal;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  color: var(--text);
+  margin: 0 0 var(--space-xs);
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-accent);
+  font-size: 1.6rem;
+  color: var(--accent-red);
+  font-weight: 600;
+  margin: 0 0 var(--space-sm);
+}
+
+.hero-author {
+  font-family: var(--font-headline);
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 var(--space-xl);
+}
+
+.hero-thesis {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+}
+
+.hero-cta {
+  display: inline-block;
+  background: var(--red-deep);
+  color: #FFFFFF;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-headline);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(178, 31, 44, 0.4);
+  color: #FFFFFF;
+}
+
+/* ---------- Home Sections ---------- */
+
+.home-section {
+  max-width: var(--max-width);
+  margin: var(--space-3xl) auto;
+  padding: 0 var(--space-xl);
+}
+
+.home-section h2 {
+  text-align: center;
+}
+
+.home-section > p {
+  text-align: center;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+}
+
+/* ---------- Experience Cards ---------- */
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+
+.experience-card {
+  display: block;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.experience-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+  color: var(--text);
+}
+
+.experience-card h3 {
+  color: var(--accent);
+  margin: 0 0 var(--space-sm);
+  font-size: 1.3rem;
+}
+
+.experience-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 var(--space-md);
+}
+
+.experience-tag {
+  font-family: var(--font-headline);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-red);
+}
+
+/* ---------- Argument Page ---------- */
+
+.argument-part {
+  max-width: 720px;
+  margin: var(--space-3xl) auto;
+  padding: 0 var(--space-xl);
+}
+
+.argument-part h2 {
+  text-align: left;
+}
+
+.part-label {
+  font-family: var(--font-headline);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-red);
+  margin: 0 0 var(--space-xs);
+  display: block;
+}
+
+.argument-part p {
+  line-height: 1.8;
+}
+
+.argument-cta {
+  display: inline-block;
+  margin-top: var(--space-md);
+  color: var(--accent);
+  font-family: var(--font-headline);
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2.5rem; }
+  .hero-subtitle { font-size: 1.2rem; }
+  .hero-epigraph { font-size: 1.1rem; }
+}

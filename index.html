@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Safety Machine — Harm Without Fault</title>
+  <meta name="description" content="Companion site for The Safety Machine by Seth C. Oranburg. An interactive experience exploring how institutions engineered out judgment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/oranburg-style.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('theme');
+        if (theme === 'light' || theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', theme);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/argument/">The Argument</a></li>
+      <li><a href="/explore/">Explore</a></li>
+      <li><a href="/about/">About</a></li>
+      <li>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to light mode">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <blockquote class="hero-epigraph">
+        "Baby, don't hurt me / Don't hurt me / No more."
+        <cite>Haddaway, "What Is Love" (1993)</cite>
+      </blockquote>
+      <h1>The Safety Machine</h1>
+      <p class="hero-subtitle">Harm Without Fault</p>
+      <p class="hero-author">Seth C. Oranburg</p>
+      <p class="hero-thesis">What is law for? Strip away the academic vocabulary and you find the same structure as a 1993 Eurodance chorus: <em>Baby, don't hurt me.</em> Law exists to prevent harm. This book argues that harm prevention has become law's only definition &mdash; and that we have forgotten law's second purpose: cultivating the judgment, character, and practical wisdom that make civilization possible.</p>
+      <a href="/argument/" class="hero-cta">Explore the Argument &rarr;</a>
+    </div>
+  </header>
+
+  <main class="site-content">
+    <section class="home-section">
+      <h2>Three Experiences</h2>
+      <p>Each interactive maps to a part of the book's argument. Play them in order or start anywhere.</p>
+      <div class="experience-grid">
+        <a href="/explore/#deskilling" class="experience-card">
+          <h3>The Deskilling Loop</h3>
+          <p>Run an institution. Choose between judgment and rules. Watch what happens to your capacity.</p>
+          <span class="experience-tag">Part One: The Machine</span>
+        </a>
+        <a href="/explore/#risk-uncertainty" class="experience-card">
+          <h3>Risk vs. Uncertainty</h3>
+          <p>Can you tell the difference between calculable risk and genuine uncertainty? LTCM's Nobel laureates couldn't.</p>
+          <span class="experience-tag">Part Two: The Epistemology</span>
+        </a>
+        <a href="/explore/#two-purposes" class="experience-card">
+          <h3>The Two Purposes</h3>
+          <p>Build an institution with foundation and scaffolding. See what happens when you only build one.</p>
+          <span class="experience-tag">Part Three: Recovery</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <h2>The Paradigm Case</h2>
+      <p>The Boeing 737 MAX killed 346 people. The compliance documentation was immaculate. The aircraft was perfectly legal and fundamentally lethal. The institution was judgment-proof in both senses.</p>
+      <blockquote>
+        Boeing designed an aircraft that did not require pilot judgment in the relevant flight regime. The pilots never practiced compensating for the pitch characteristics. They never developed the embodied, habituated skill &mdash; what Aristotle would have called <em>hexis</em> &mdash; that would have made manual recovery possible. The automation was not incidental. It was the architecture.
+      </blockquote>
+      <p><a href="/argument/">Read how we got here &rarr;</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="https://oranburg.law">oranburg.law</a> &middot; <a href="https://oranburg.law/scholarship/">Scholarship</a> &middot; <a href="https://oranburg.law/demos/ostracism-game/">The Ostracism Game</a></p>
+    <p>&copy; 2026 Seth C. Oranburg. All rights reserved.</p>
+  </footer>
+
+  <script src="/assets/js/theme.js"></script>
+</body>
+</html>

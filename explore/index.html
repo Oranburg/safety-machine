@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore — The Safety Machine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/oranburg-style.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='light'||t==='dark'?t:'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}})();
+  </script>
+  <style>
+    .sim-panel { max-width: 680px; margin: 0 auto var(--space-3xl); }
+    .sim-title { text-align: center; margin-bottom: var(--space-sm); }
+    .sim-subtitle { text-align: center; color: var(--muted); margin-bottom: var(--space-xl); }
+    .sim-dashboard { display: flex; gap: var(--space-md); margin-bottom: var(--space-lg); }
+    .sim-gauge { flex: 1; background: var(--bg-secondary); border-radius: var(--radius-md); padding: var(--space-md); text-align: center; }
+    .sim-gauge-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+    .sim-gauge-value { font-size: 2rem; font-weight: 700; margin: var(--space-xs) 0; }
+    .sim-gauge-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+    .sim-gauge-fill { height: 100%; border-radius: 3px; transition: width 0.4s; }
+    .sim-scenario { background: var(--bg-secondary); border-radius: var(--radius-md); padding: var(--space-xl); margin-bottom: var(--space-lg); }
+    .sim-scenario h4 { margin-top: 0; }
+    .sim-scenario p { color: var(--muted); }
+    .sim-buttons { display: flex; gap: var(--space-md); }
+    @media(max-width:600px) { .sim-buttons { flex-direction: column; } }
+    .sim-btn { flex: 1; padding: var(--space-md); border-radius: var(--radius-md); border: 2px solid var(--border); background: var(--bg-secondary); color: var(--text); cursor: pointer; font-family: var(--font-body); font-size: 0.95rem; text-align: left; transition: border-color 0.2s, transform 0.2s; }
+    .sim-btn:hover { border-color: var(--accent); transform: translateX(4px); }
+    .sim-btn strong { display: block; font-family: var(--font-headline); color: var(--accent); margin-bottom: var(--space-xs); }
+    .sim-btn-judgment:hover { border-color: var(--yellow); }
+    .sim-btn-judgment:hover strong { color: var(--yellow); }
+    .sim-btn-rule:hover { border-color: var(--accent-red); }
+    .sim-btn-rule:hover strong { color: var(--accent-red); }
+    .sim-outcome { background: var(--bg-secondary); border-left: 4px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: var(--space-lg); margin-bottom: var(--space-lg); display: none; }
+    .sim-outcome.visible { display: block; animation: fadeIn 0.3s; }
+    .sim-outcome.bad { border-left-color: var(--accent-red); }
+    .sim-outcome.good { border-left-color: #4ade80; }
+    .sim-continue { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-sm); font-family: var(--font-headline); cursor: pointer; margin-top: var(--space-md); transition: background 0.2s, color 0.2s; }
+    .sim-continue:hover { background: var(--accent); color: var(--bg); }
+    .sim-reveal { background: var(--bg-secondary); border: 2px solid var(--accent-red); border-radius: var(--radius-md); padding: var(--space-2xl); text-align: center; display: none; }
+    .sim-reveal.visible { display: block; animation: fadeIn 0.5s; }
+    .sim-reveal h3 { color: var(--accent-red); }
+    .sim-reveal .literary { font-size: 1.1rem; line-height: 1.8; max-width: 560px; margin: var(--space-lg) auto; }
+    .sim-restart { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-sm); font-family: var(--font-headline); cursor: pointer; margin-top: var(--space-lg); }
+    .sim-restart:hover { border-color: var(--accent); color: var(--accent); }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .sim-round-label { font-family: var(--font-headline); color: var(--accent); font-size: 0.85rem; margin-bottom: var(--space-sm); }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/argument/">The Argument</a></li>
+      <li><a href="/explore/" aria-current="page">Explore</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to light mode"><svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></li>
+    </ul>
+  </nav>
+
+  <main class="site-content">
+    <div id="deskilling" class="sim-panel">
+      <h2 class="sim-title">The Deskilling Loop</h2>
+      <p class="sim-subtitle">You run an institution. Each round, something happens that your rules don't cover. What do you do?</p>
+
+      <div class="sim-dashboard">
+        <div class="sim-gauge">
+          <div class="sim-gauge-label">Judgment Capacity</div>
+          <div class="sim-gauge-value" id="judgmentValue">100</div>
+          <div class="sim-gauge-bar"><div class="sim-gauge-fill" id="judgmentBar" style="width:100%;background:#4ade80"></div></div>
+        </div>
+        <div class="sim-gauge">
+          <div class="sim-gauge-label">Compliance Coverage</div>
+          <div class="sim-gauge-value" id="complianceValue">50</div>
+          <div class="sim-gauge-bar"><div class="sim-gauge-fill" id="complianceBar" style="width:50%;background:var(--accent)"></div></div>
+        </div>
+      </div>
+
+      <div id="simScenario" class="sim-scenario"></div>
+      <div id="simOutcome" class="sim-outcome"></div>
+      <div id="simReveal" class="sim-reveal"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="https://oranburg.law">oranburg.law</a> &middot; <a href="/argument/">The Argument</a></p>
+    <p>&copy; 2026 Seth C. Oranburg. All rights reserved.</p>
+  </footer>
+
+  <script src="/assets/js/theme.js"></script>
+  <script>
+  (function () {
+    var scenarios = [
+      { title: "The Unlabeled Package", desc: "A courier delivers a package with no shipping label. Your mail room has rules for labeled packages but nothing for this. The package might be a gift from a donor. It might be hazardous." },
+      { title: "The Midnight Email", desc: "A senior employee sends an email at 2am containing confidential client data to their personal address. Your IT policy covers data breaches but says nothing about self-forwarding by authorized personnel." },
+      { title: "The Student's Request", desc: "A student asks to submit their final exam orally instead of in writing, citing a disability your accommodation policy doesn't specifically address. The request is reasonable but unprecedented." },
+      { title: "The Vendor's Gift", desc: "A vendor sends your procurement officer a $200 bottle of wine. Your ethics policy sets a $50 gift limit but doesn't address what to do with gifts that arrive unsolicited and cannot be returned." },
+      { title: "The Algorithm's Decision", desc: "Your automated loan system denies a long-standing customer. The customer appeals. Your process handles appeals of human decisions but has no procedure for reviewing algorithmic ones." },
+      { title: "The Whistleblower's Timing", desc: "An employee reports a safety concern to the media before reporting internally. Your whistleblower policy requires internal reporting first, but the employee feared retaliation from their supervisor." },
+      { title: "The Foreign Regulation", desc: "A new EU regulation conflicts with your existing U.S. compliance framework. Neither your legal team nor your compliance manual anticipated this specific conflict." },
+      { title: "The Social Media Post", desc: "An employee posts a TikTok showing your factory floor. It's positive and well-received, but your social media policy prohibits filming on premises. The post has already gone viral." },
+      { title: "The Power Outage", desc: "A power outage disables your electronic record-keeping for six hours. Transactions continued on paper. Your audit procedures assume continuous electronic records." },
+      { title: "The New Technology", desc: "A department head wants to use an AI tool to draft client communications. Your technology policy was written before AI writing tools existed. The tool would save 40% of staff time." }
+    ];
+
+    var state = { round: 0, judgment: 100, compliance: 50, gameOver: false };
+
+    function updateDashboard() {
+      var jv = document.getElementById('judgmentValue');
+      var jb = document.getElementById('judgmentBar');
+      var cv = document.getElementById('complianceValue');
+      var cb = document.getElementById('complianceBar');
+      jv.textContent = Math.max(0, state.judgment);
+      jb.style.width = Math.max(0, state.judgment) + '%';
+      jb.style.background = state.judgment > 60 ? '#4ade80' : state.judgment > 30 ? '#fbbf24' : '#f87171';
+      cv.textContent = Math.min(100, state.compliance);
+      cb.style.width = Math.min(100, state.compliance) + '%';
+    }
+
+    function showScenario() {
+      if (state.round >= 10 || state.judgment <= 0) { showReveal(); return; }
+      var s = scenarios[state.round % scenarios.length];
+      var el = document.getElementById('simScenario');
+      el.innerHTML = '<div class="sim-round-label">Round ' + (state.round + 1) + ' of 10</div>'
+        + '<h4>' + s.title + '</h4>'
+        + '<p>' + s.desc + '</p>'
+        + '<div class="sim-buttons">'
+        + '<button class="sim-btn sim-btn-judgment" onclick="DSL.choose(\'judgment\')"><strong>Exercise Judgment</strong>Assess the situation yourself. Risky &mdash; could go well or badly.</button>'
+        + '<button class="sim-btn sim-btn-rule" onclick="DSL.choose(\'rule\')"><strong>Write a New Rule</strong>Safe &mdash; covers this case, but costs judgment capacity.</button>'
+        + '</div>';
+      document.getElementById('simOutcome').classList.remove('visible');
+    }
+
+    function choose(type) {
+      var outcome = document.getElementById('simOutcome');
+      document.getElementById('simScenario').innerHTML = '';
+
+      if (type === 'rule') {
+        state.judgment -= 10;
+        state.compliance += 6;
+        outcome.className = 'sim-outcome visible';
+        outcome.innerHTML = '<p><strong>You wrote a new rule.</strong> The situation is covered going forward. But your team just lost another opportunity to develop judgment. Judgment Capacity &minus;10. Compliance Coverage +6.</p>'
+          + '<button class="sim-continue" onclick="DSL.next()">Next round</button>';
+      } else {
+        var success = Math.random() < (state.judgment / 150);
+        if (success) {
+          state.judgment += 5;
+          outcome.className = 'sim-outcome visible good';
+          outcome.innerHTML = '<p><strong>Good call.</strong> Your judgment was sound. The team learned something. Judgment Capacity +5.</p>'
+            + '<button class="sim-continue" onclick="DSL.next()">Next round</button>';
+        } else {
+          state.judgment -= 15;
+          state.compliance += 6;
+          outcome.className = 'sim-outcome visible bad';
+          outcome.innerHTML = '<p><strong>It went badly.</strong> The judgment call was wrong &mdash; or at least, it looked wrong. The board demands a new rule to prevent this from happening again. Judgment Capacity &minus;15. Compliance Coverage +6. The failure "proves" that judgment cannot be trusted.</p>'
+            + '<button class="sim-continue" onclick="DSL.next()">Next round</button>';
+        }
+      }
+      state.round++;
+      updateDashboard();
+    }
+
+    function next() {
+      showScenario();
+    }
+
+    function showReveal() {
+      document.getElementById('simScenario').innerHTML = '';
+      document.getElementById('simOutcome').classList.remove('visible');
+      var el = document.getElementById('simReveal');
+      var j = Math.max(0, state.judgment);
+      var c = Math.min(100, state.compliance);
+      el.className = 'sim-reveal visible';
+      el.innerHTML = '<h3>The Paradox</h3>'
+        + '<p>Judgment Capacity: <strong>' + j + '%</strong>. Compliance Coverage: <strong>' + c + '%</strong>.</p>'
+        + '<p class="literary">Your institution is ' + (c >= 90 ? 'nearly perfectly' : 'substantially') + ' compliant and ' + (j <= 20 ? 'almost completely incapable' : 'significantly diminished in its capacity') + ' of handling anything the rules don\'t cover.</p>'
+        + '<p class="literary">Every rule you wrote was rational. Every judgment failure justified the next rule. The loop is not a mistake. It is the architecture.</p>'
+        + '<blockquote>"The cost is measured in a civilization that has optimized for the prevention of hurt and has thereby prevented itself from building anything worth protecting."</blockquote>'
+        + '<p><a href="/argument/">Read the full argument &rarr;</a></p>'
+        + '<button class="sim-restart" onclick="DSL.restart()">Play again</button>';
+    }
+
+    function restart() {
+      state = { round: 0, judgment: 100, compliance: 50, gameOver: false };
+      updateDashboard();
+      document.getElementById('simReveal').classList.remove('visible');
+      showScenario();
+    }
+
+    window.DSL = { choose: choose, next: next, restart: restart };
+    showScenario();
+  })();
+  </script>
+</body>
+</html>
