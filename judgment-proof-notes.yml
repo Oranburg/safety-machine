@@ -1,0 +1,260 @@
+# Judgment Proof — Book Notes for Site Building
+# These notes allow quick reference without re-reading the full manuscript.
+# Source: scholarship/judgment-proof/JP 1-3 Combined.md (2,675 lines)
+
+book:
+  title: "Judgment Proof: The Reign of the Safety Machine versus the Recovery of Human Wisdom"
+  author: Seth C. Oranburg
+  status: in-progress
+  parts: 3
+  chapters: 14
+
+epigraphs:
+  - source: Haddaway, "What Is Love" (1993)
+    text: "Baby, don't hurt me / Don't hurt me / No more."
+  - source: Aristotle, Nicomachean Ethics, Book II, 1103b
+    text: "Legislators make the citizens good by forming habits in them."
+  - source: Maimonides, Guide for the Perplexed, Part III, Ch. 27
+    text: "The perfection of the body is antecedent to the perfection of the soul... But the perfection of the soul is the ultimate end."
+
+core_argument:
+  thesis: >
+    Modern institutions have engineered out the faculty of judgment and become
+    "judgment-proof" in both the legal and epistemic sense. Law has two purposes
+    — foundation (preventing harm) and scaffolding (cultivating wisdom) — and
+    we have forgotten the second.
+  four_claims:
+    - label: Historical
+      summary: >
+        The Western legal tradition understood law's two purposes until the
+        17th century. The Wars of Religion forced a retreat from law's second
+        purpose that was initially rational and gradually catastrophic.
+    - label: Epistemological
+      summary: >
+        The ambition to eliminate uncertainty through specification is
+        impossible in principle. Knight (risk vs uncertainty), Aristotle
+        (techne vs phronesis), Polanyi (tacit knowledge) all converge:
+        some knowledge can only be exercised, not encoded.
+    - label: Institutional
+      summary: >
+        The Deskilling Loop is predictable: replace judgment with rules,
+        actors lose capacity, new situations arise that rules don't cover,
+        response is more rules, capacity atrophies further. The loop
+        terminates in catastrophic failure.
+    - label: Prescriptive
+      summary: >
+        Recovery requires rebuilding institutional conditions for judgment.
+        Not eliminating regulation but distinguishing friction that produces
+        compliance from friction that produces wisdom.
+
+key_concepts:
+  haddaways_law:
+    definition: >
+      The institutional imperative to prevent hurt, pursued without limit,
+      without acknowledgment of what it costs, without vocabulary for what
+      law should enable rather than forbid.
+    origin: "Chapter 1"
+    hook: >
+      What is law? Baby, don't hurt me. Law defines its purpose by what
+      it prevents. The problem is not the negative definition. The problem
+      is that it has become the ONLY definition.
+
+  deskilling_loop:
+    definition: >
+      When institutions replace judgment with rules, they eliminate the
+      practice that develops judgment. The deficit justifies more rules.
+      Coverage expands. Capacity contracts. The loop terminates in
+      catastrophic failure.
+    origin: "Chapter 1"
+    examples:
+      - "Boeing 737 MAX (MCAS replaced pilot judgment, 346 dead)"
+      - "Mortgage origination crisis 2008 (models replaced underwriter judgment)"
+      - "Mata v. Avianca (AI replaced legal research judgment)"
+      - "Bank compliance ($274B/year, catches grandmother, misses shell company)"
+
+  judgment_proof_double_meaning:
+    definition: >
+      In law, judgment-proof means no judgment can be collected from you.
+      In this book, it also means the institution has eliminated the faculty
+      against which accountability would operate. When no one judges, no one
+      can be said to have judged wrongly.
+    origin: "Chapter 1"
+
+  tikkun_ha_guf_vs_tikkun_ha_nefesh:
+    definition: >
+      Maimonides's distinction: tikkun ha-guf (perfection of the body,
+      material infrastructure) vs tikkun ha-nefesh (perfection of the soul,
+      cultivation of understanding). The first is prior in time but secondary
+      in rank. You build the foundation so the scaffolding can rise.
+    origin: "Chapter 1"
+    key_quote: "The foundation exists to make the scaffolding possible. The scaffolding is the point."
+
+  techne_vs_phronesis:
+    definition: >
+      Aristotle: techne is productive knowledge (making things), systematizable,
+      encodable. Phronesis is practical wisdom, constituted by exercise, cannot
+      be encoded without ceasing to be phronesis. Modern regulatory design
+      classified professional discretion as techne subject to optimization.
+      But judgment in law's second function is phronesis constituted by exercise.
+      The error is ontological.
+    origin: "Chapter 1"
+
+  knights_distinction:
+    definition: >
+      Risk: known probability distributions, calculable, manageable by algorithm.
+      Uncertainty: genuinely novel situations with no historical distribution.
+      Requires judgment. Modern finance conflated the two (LTCM, VaR, Basel II).
+    origin: "Chapter 2"
+
+  ludic_fallacy:
+    definition: >
+      Taleb's term: treating the complex world as a structured game with fixed
+      rules and known probabilities. Casino vs forest. Financial models built
+      for casinos, deployed in forests.
+    origin: "Chapter 2"
+
+paradigm_cases:
+  boeing_737_max:
+    summary: >
+      MCAS replaced pilot judgment. Pilots never practiced compensating for
+      pitch characteristics. When sensor failed, 346 people died. Compliance
+      documentation was immaculate. The aircraft was perfectly legal and
+      fundamentally lethal.
+    details:
+      - "Lion Air 610: Oct 29, 2018, 189 killed"
+      - "Ethiopian 302: Mar 10, 2019, 157 killed"
+      - "Combined: 346 dead"
+      - "FAA delegated 87% of certification to Boeing itself"
+      - "MCAS characterized as minor modification of speed trim"
+    chapter: 1
+
+  ltcm:
+    summary: >
+      Most credentialed team in finance history (Scholes, Merton, Nobel
+      laureates). Built architecture for calculable risk. Lost $4.6B in
+      4 months when correlations dissolved. Required federal rescue.
+      "The professors had confused the measurable with the manageable."
+    chapter: 2
+
+  grandmother_vs_shell_company:
+    summary: >
+      Grandmother wiring money to hurricane relief: 90-minute interrogation.
+      Three blocks away: Delaware shell company with Cyprus nominee directors
+      wires $3M, clears in 3 seconds. Global compliance cost: $274B/year.
+      The Safety Machine stops the grandmother and escorts the shell company
+      to the vault.
+    chapter: 1
+
+  shabbat_accommodation:
+    summary: >
+      Seth's personal experience at UNH: assigned Saturday work schedule,
+      requested Sabbath accommodation, institution could not determine over
+      weeks whether to accommodate. Not refusal but procedural incapacity.
+      Jewish community answered in an afternoon using centuries of practice.
+    chapter: "Preface"
+
+intellectual_lineage:
+  - name: Maimonides
+    contribution: "Two purposes of law (tikkun ha-guf / tikkun ha-nefesh)"
+  - name: Aristotle
+    contribution: "Techne vs phronesis; legislators form citizens through habits"
+  - name: Aquinas
+    contribution: "Law leads to virtue gradually; determinatio (space for judgment)"
+  - name: Ostrom
+    contribution: "Design principles for self-governing institutions; commons governance"
+  - name: Knight
+    contribution: "Risk vs uncertainty; entrepreneurial judgment"
+  - name: Coase
+    contribution: "Transaction costs (descriptive); followers made it prescriptive"
+  - name: Taleb
+    contribution: "Ludic Fallacy; Black Swans; fat tails"
+  - name: Polanyi
+    contribution: "Tacit knowledge ('we can know more than we can tell')"
+  - name: Hobbes
+    contribution: "Eliminated summum bonum; law prevents death, nothing more"
+  - name: Locke
+    contribution: "Separated civil interests from care of souls"
+  - name: Mill
+    contribution: "Harm principle as sole legitimate basis for coercion"
+
+structure:
+  part_one:
+    title: "The Machine and Its Origins"
+    chapters:
+      - num: 1
+        title: "Haddaway's Law"
+        status: read
+      - num: 2
+        title: "The Confusion"
+        status: read
+      - num: 3
+        title: "The Great Retreat"
+        status: partially_read
+      - num: 4
+        title: "Prudence as Transaction Cost"
+        status: unread
+      - num: 5
+        title: "Harm-Prevention Architecture"
+        status: unread
+
+  part_two:
+    title: "The Epistemology of the Problem"
+    chapters:
+      - num: 6
+        title: "Wisdom of Not Knowing"
+        status: unread
+      - num: 7
+        title: "Nobody Knows Everything"
+        status: unread
+
+  part_three:
+    title: "The Architecture of Recovery"
+    chapters:
+      - num: 8
+        title: "Boeing"
+        status: unread
+      - num: 9
+        title: "The Safety Machine"
+        status: unread
+      - num: 10
+        title: "The Gymnasium"
+        status: unread
+      - num: 11
+        title: "Aristotle's Algorithm"
+        status: unread
+      - num: 12
+        title: "The Hardware"
+        status: unread
+      - num: 13
+        title: "The Silicon Havruta"
+        status: unread
+      - num: 14
+        title: "Anti-Utopia"
+        status: unread
+
+site_building_notes:
+  interactive_elements:
+    - name: "Deskilling Loop Simulator"
+      concept: >
+        8-10 round game. Institution starts with Judgment Capacity 100,
+        Compliance Coverage 50. Each round: exercise judgment (risky) or
+        write a rule (safe but -10 judgment). Bad judgment outcomes trigger
+        automatic rule-writing AND -15 judgment. Loop drives judgment to
+        zero, compliance to 100. Paradox reveal at end.
+      status: "designed, not yet built"
+    - name: "The Two Purposes Visualization"
+      concept: >
+        Interactive diagram showing foundation (tikkun ha-guf) and
+        scaffolding (tikkun ha-nefesh). User can add more foundation
+        blocks (rules, compliance) and watch the scaffolding never get
+        built. Or balance both and see a complete structure.
+      status: "concept only"
+
+  key_quotes_for_site:
+    - "What is law? Baby, don't hurt me."
+    - "The Safety Machine stops the grandmother and escorts the shell company to the vault."
+    - "The foundation exists to make the scaffolding possible. The scaffolding is the point."
+    - "You cannot define law by what it prevents any more than you can define love by what it does not do."
+    - "The cost is measured in a civilization that has optimized for the prevention of hurt and has thereby prevented itself from building anything worth protecting."
+    - "Haddaway's answer was not wrong. It was incomplete."
+    - "The professors had confused the measurable with the manageable."
